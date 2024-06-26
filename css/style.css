@@ -6,9 +6,147 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
     /* GENERAL */
+
+:root {
+    --light-grey: #282828;
+    --dark-blue: #141922;
+}   
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-}  
+}
+
+
+/* MAIN */
+
+main {
+    height: calc(100vh - 100px);
+    background-color: #141922;
+}
+
+
+/* FOOTER */
+
+footer {
+    height: 100px;
+    background-color: var(--light-grey);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.song-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.img-container img {
+    width: 65px;
+    border-radius: 3px;
+}
+
+.song-description p:last-child{
+    color: #858585;
+    font-size: 0.90rem;
+}
+
+.song-icons {
+    display: flex;
+    gap: 15px;
+    padding-left: 20px;
+    color: #858585;
+}
+
+.progress-player {
+    width: 50%;
+}
+
+.player-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+    gap: 25px;
+}
+
+.player-buttons .fa-circle-play {
+    font-size: 2rem;
+}
+
+.progress-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.progress-bar {
+    height: 4px;
+    border-radius: 10px;
+    width: 50%;
+    background-color:#5A5A5A;
+    position: relative;
+}
+
+.progress {
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background-color: #C1C1C1;
+    border-radius: 10px;
+}
+
+.song-volume {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+}
+
+.volume-icons {
+    display: flex;
+    gap: 15px;
+    padding-right: 20px;
+}
+
+.volume-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.volume-bar {
+    height: 4px;
+    border-radius: 10px;
+    width: 100%;
+    background-color:#5A5A5A;
+    position: relative;
+}
+
+.volume-progress {
+    position: absolute;
+    height: 100%;
+    width: 25%;
+    background-color: #C1C1C1;
+    border-radius: 10px;
+}
+
+
