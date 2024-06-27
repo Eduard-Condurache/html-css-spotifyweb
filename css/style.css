@@ -14,19 +14,40 @@ img {
     max-width: 100%;
 }
 
+
     /* GENERAL */
 
 :root {
     --light-grey: #282828;
     --dark-blue: #141922;
+    --lower-hight: 100px;
+    --aside-width: 250px;
 }   
 
-.button-bar {
-    position: absolute;
-    top: 25px;
-    right: 10px;
+/* STRUTTURA */
+
+#upper {
+    height: calc(100vh - 100px);
     display: flex;
+} 
+    
+aside {
+    width: var(--aside-width);
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    overflow-y: auto;
 }
+    
+main {
+    width: calc(100% - var(--aside-width));
+    background-color:#141922;
+    overflow-y: auto;
+}
+
+/* /STRUTTURA */
 
 .my-btn {
     padding: 14px 36px;
@@ -38,17 +59,6 @@ img {
     font-weight: 500;
 }
 
-main {
-    width: 100vw;
-    height: calc(100vh - 100px);
-    background-color:#141922;
-    overflow: auto;
-}
-
-.main-container {
-    margin-left: 250px;
-}
-
 .navigation-container {
     margin: 0 auto;
     padding: 0 20px;
@@ -56,31 +66,38 @@ main {
 
 /* MAIN */
 
-.opacity-bar {
+/* header */
+
+header {
     height: 100px;
+    text-align: right;
     position: sticky;
+    background: rgba(0, 0, 0 , 0.5);
     top: 0;
-    left: 0;
-    right: 0;
-    background-color: black;
-    opacity: 0.5;
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+}
+
+header .button-container {
+    padding: 0 20px;
 }
 
 /* main-content */
 
-
 .navigation-bar {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
+    flex-wrap: wrap;
 }
 
 .navigation-bar ul {
     list-style-type: none;
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -93,28 +110,20 @@ main {
 
 /* sidebar */
 
+.nav-bar-small {
+    display: none;
+}
+
+.aside-container {
+    padding: 20px;
+}
+
 .logo {
     padding: 20px;
 }
 
 .logo img {
     width: 150px;
-}
-
-aside {
-   position: fixed;
-   z-index: 1;
-   top: 0;
-   left: 0;
-   bottom: 0;
-   width: 250px;
-   height: 100vh;
-   background-color: black;
-   color: white;
-   display: flex;
-   flex-direction: column;
-   padding: 20px;
-   font-weight: 600;
 }
 
 nav {
@@ -169,25 +178,27 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: var(--lower-hight);
     color: white;
     background-color: var(--light-grey);
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 15px;
     
 }
 
+/* LEFT */
+
 .song-info {
+    width: calc(100% / 3);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: flex-start;
     gap: 15px;
 }
 
 .img-container img {
-    width: 65px;
+    max-width: 50px;
     border-radius: 3px;
 }
 
@@ -197,14 +208,16 @@ footer {
 }
 
 .song-icons {
-    display: flex;
-    gap: 15px;
-    padding-left: 20px;
     color: #858585;
+    display: flex;
+    gap: 10px;
+    margin-left: 20px;
 }
 
+/* MIDDLE */
+
 .progress-player {
-    width: 50%;
+    width: calc(100% / 3);
 }
 
 .player-buttons {
@@ -214,6 +227,7 @@ footer {
     padding-bottom: 10px;
     font-size: 1.1rem;
     gap: 25px;
+    padding-top: 20px;
 }
 
 .player-buttons .fa-circle-play {
@@ -231,7 +245,7 @@ footer {
 .progress-bar {
     height: 4px;
     border-radius: 10px;
-    width: 50%;
+    width: 100%;
     background-color:#5A5A5A;
     position: relative;
 }
@@ -244,11 +258,13 @@ footer {
     border-radius: 10px;
 }
 
+/* RIGHT */
+
 .song-volume {
+    width: calc(100% / 3);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 250px;
 }
 
 .volume-icons {
@@ -258,7 +274,7 @@ footer {
 }
 
 .volume-container {
-    width: 100%;
+    width: 20%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -280,5 +296,59 @@ footer {
     background-color: #C1C1C1;
     border-radius: 10px;
 }
+
+/* RESPONSIVE */
+
+/* 1 step */
+@media screen and (max-width: 1100px) {
+
+}
+
+/* 2 step */
+@media screen and (max-width: 700px) {
+
+}
+
+/* 3 step */
+@media screen and (max-width: 600px) {
+    
+    /* aside */
+    aside {
+        width: calc(250px / 3);
+    }
+
+    aside .aside-container {
+        display: none;
+    }
+
+    aside .nav-bar-small {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding-top: 20px;
+        gap: 10px;
+    }
+    
+    /* main */
+    main {
+        width: calc(100% - (250px / 3));
+    }
+
+    /* footer */
+    
+    footer {
+        padding: 0;
+    }
+
+    .song-icons  {
+        display: inline-block;
+        margin: 0;
+    }
+
+}
+
+
 
 
