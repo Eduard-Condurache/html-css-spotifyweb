@@ -14,9 +14,6 @@ img {
     max-width: 100%;
 }
 
-
-    /* GENERAL */
-
 :root {
     --light-grey: #282828;
     --dark-blue: #141922;
@@ -31,7 +28,7 @@ img {
     display: flex;
 } 
     
-aside {
+#upper > aside {
     width: var(--aside-width);
     background-color: black;
     color: white;
@@ -41,13 +38,30 @@ aside {
     overflow-y: auto;
 }
     
-main {
+#upper > main {
     width: calc(100% - var(--aside-width));
     background-color:#141922;
     overflow-y: auto;
 }
 
-/* /STRUTTURA */
+ /* GENERAL */
+
+.container {
+    color: white;
+    padding: 0 20px;
+}
+
+.my-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    padding-top: 40px;
+}
+
+.my-col {
+    width: calc(100% / 6 - 20px);
+    margin: 0 10px;
+}
 
 .my-btn {
     padding: 14px 36px;
@@ -91,13 +105,14 @@ header .button-container {
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .navigation-bar ul {
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
@@ -106,6 +121,14 @@ header .button-container {
     text-transform: uppercase;
     color: #7D7F84;
     font-weight: 600;
+}
+
+.description {
+    text-align: center;
+}
+
+.created-foryou {
+    padding: 40px 0;
 }
 
 /* sidebar */
@@ -301,19 +324,23 @@ footer {
 
 /* 1 step */
 @media screen and (max-width: 1100px) {
-
+    .my-col {
+        width: calc(100% / 4 - 20px);
+    }
 }
 
 /* 2 step */
 @media screen and (max-width: 700px) {
-
+    .my-col {
+        width: calc(100% / 2 - 20px);
+    }
 }
 
 /* 3 step */
 @media screen and (max-width: 600px) {
     
     /* aside */
-    aside {
+    #upper > aside {
         width: calc(250px / 3);
     }
 
@@ -332,7 +359,7 @@ footer {
     }
     
     /* main */
-    main {
+    #upper > main {
         width: calc(100% - (250px / 3));
     }
 
