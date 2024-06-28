@@ -224,15 +224,11 @@ header .button-container {
     padding-bottom: 10px;
 }
 
-.nav-bar-small {
-    display: none;
-}
-
-.logo {
+.logo-container {
     padding: 20px 10px;
 }
 
-.logo img {
+.logo-container img {
     width: 150px;
 }
 
@@ -242,8 +238,18 @@ nav {
     margin-bottom: 20px;
 }
 
-aside p {
+.logo-container .logo-mobile {
+    display: none;
+}
+
+nav span {
+    font-size: 0.90rem;
+}
+
+aside span,
+aside ul li a {
     color: #6F6F6F;
+    text-decoration: none;
 }
 
 aside img{
@@ -257,10 +263,6 @@ aside img{
     gap: 10px;
 }
 
-nav p {
-    font-size: 0.90rem;
-}
-
 .square {
     width: 40px;
     height: 40px;
@@ -271,11 +273,13 @@ nav p {
     color: black;
 }
 
-.playlist-container p {
+.playlist-container span,
+.playlist-container ul li {
     padding: 10px 0;
 }
 
-.aside-container p:hover {
+.aside-container span:hover,
+.aside-container ul li a:hover {
     color: white;
     cursor: pointer;
 }
@@ -513,21 +517,44 @@ footer {
     #upper > aside {
         width: calc(250px / 3);
     }
+ 
+    .aside-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin-bottom: 10px;
+    }
 
-    aside .aside-container {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .logo-mobile {
+        width: 35px;
+        height: 35px;
+    }
+
+    .logo-container .logo-mobile {
+        display: block;
+    }
+
+    .logo-container .logo-desktop {
         display: none;
     }
 
-    aside .nav-bar-small {
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        padding-top: 20px;
-        gap: 10px;
+    .playlist-container > * {
+        display: none;
     }
-    
+
+    aside span,
+    aside .vertical-line,
+    aside hr {
+        display: none;
+    }
+
     /* main */
     #upper > main {
         width: calc(100% - (250px / 3));
