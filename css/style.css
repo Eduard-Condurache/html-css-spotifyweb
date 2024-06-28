@@ -36,13 +36,6 @@ img {
     flex-direction: column;
     font-weight: 600;
     position: relative;
-    height: calc(100vh - var(--lower-hight));
-}
-
-.aside-container {
-    height: 100%;
-    padding: 20px;
-    position: relative; 
 }
     
 #upper > main {
@@ -98,6 +91,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    z-index: 1;
 }
 
 .my-btn {
@@ -122,9 +116,7 @@ header .button-container {
 
 .navigation-bar {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
     padding: 20px 0;
     margin-bottom: 20px;
 }
@@ -203,16 +195,41 @@ header .button-container {
 
 /* sidebar */
 
+.aside-container {
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    padding-bottom: 10px;
+}
+
+.playlist-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.playlist-scrollbar {
+    overflow-y:auto;
+    flex-grow: 1;
+}
+
+.profile-tab {
+    background-color: black;
+}
+
+.playlist-container h4 {
+    padding-bottom: 10px;
+}
+
 .nav-bar-small {
     display: none;
 }
 
-.aside-container {
-    padding: 20px;
-}
-
 .logo {
-    padding: 20px;
+    padding: 20px 10px;
 }
 
 .logo img {
@@ -254,10 +271,6 @@ nav p {
     color: black;
 }
 
-.playlist-container h4 {
-    padding-bottom: 20px;
-}
-
 .playlist-container p {
     padding: 10px 0;
 }
@@ -271,17 +284,6 @@ nav p {
     background-color: white;
 }
 
-.playlist-container {
-    height: 50%;
-    overflow-y: auto;
-}
-
-.profile-tab {
-    position: absolute;
-    bottom: 0;
-    width: calc(100% - 40px);
-    background-color: black;
-}
 
 .profile-tab .app img {
     width: 20px;
@@ -291,7 +293,7 @@ nav p {
 
 .profile-tab .app {
     display: flex;
-    padding-bottom: 10px;
+    padding: 10px 0;
     color: grey;
 }
 
@@ -302,7 +304,7 @@ nav p {
 .personal-profile {
     display: flex;
     align-items: center;
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 .profileimg-container {
@@ -322,6 +324,13 @@ nav p {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.vertical-line {
+    border: 2px solid #ADFF2F;
+    height: 35px;
+    position: absolute;
+    left: 0;
 }
 
 /* FOOTER */
@@ -357,6 +366,7 @@ footer {
     width: 100%;
     background-color:#5A5A5A;
     position: relative;
+    margin: 0 10px;
 }
 
 .progress-circle {
@@ -409,6 +419,12 @@ footer {
 
 .fa-regular:hover {
     color: white;
+}
+
+.song-description p:last-child:hover {
+    text-decoration: underline;
+    color:white;
+    cursor: pointer
 }
 
 /* MIDDLE */
